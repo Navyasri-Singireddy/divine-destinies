@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divine Destinies</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <span class="symbol">🪷</span>
+            <div>
+                <h1>Divine Destinies</h1>
+                <p>Explore. Discover. Experience Peace.</p>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="/map">Places</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Full-Screen Hero Banner -->
+    <header class="hero-fullscreen">
+        <div class="hero-overlay">
+            <h2>Discover Spiritual Places <br><span>Around the India</span></h2>
+            <p>Explore temples, churches, mosques, monasteries, gurudwaras, and many more sacred places.</p>
+
+           <form action="/search" method="GET" style="display: flex; width: 100%; max-width: 600px; margin: 0 auto;">
+    <input
+        type="text"
+        name="q"
+        placeholder="Type any state, city, place name, or religion..."
+        required
+        style="flex: 1; padding: 12px 18px; border: 1px solid #ccc; border-radius: 6px 0 0 6px; font-size: 15px; outline: none;"
+    >
+    <button
+        type="submit"
+        style="padding: 12px 24px; background: #384f39; color: white; border: none; border-radius: 0 6px 6px 0; font-size: 15px; cursor: pointer;"
+    >
+        🔍 Search
+    </button>
+</form>
+        </div>
+    </header>
+
+    <!-- Featured Categories Grid (3 per row) -->
+    <section class="categories-section">
+        <h3 class="section-title">Featured Categories</h3>
+
+        <div class="category-grid">
+            {% for cat in categories %}
+            <a href="{{ url_for('category_places', category_name=cat.name) }}" class="category-card">
+                <div class="icon-circle">
+                    <span>{{ cat.icon }}</span>
+                </div>
+                <h4>{{ cat.name }}</h4>
+                <p>{{ cat.desc }}</p>
+                <span class="explore-link">Explore →</span>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+
+</body>
+</html>
