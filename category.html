@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ category }} in India</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <h2>Divine Destinies</h2>
+        </div>
+        <a href="/" class="nav-link">Home</a>
+    </header>
+
+    <div class="container" style="padding: 20px;">
+        <a href="/" class="back-link">&larr; Back to Categories</a>
+
+        <div class="header-section" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h1>All {{ category }} in India ({{ places|length }})</h1>
+
+            <form action="/search" method="GET" class="search-form">
+                <input type="text" name="query" placeholder="Search by name or city..." required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        {% if places %}
+        <div class="places-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
+            {% for place in places %}
+            <!-- Safely pass the entire place dictionary as JSON to JavaScript -->
+            <div class="place-card" onclick='openModal({{ place|tojson|safe }})' style="border: 1px solid #ddd; padding: 15px; border-radius: 8px; cursor: pointer; background: #fff;">
+                <span class="card-badge" style="background: #e9ecef; padding: 4px 8px; font-size: 12px; border-radius: 4px;">{{ place.category }}</span>
+                <h3 style="margin: 10px 0 5px 0;">{{ place.name }}</h3>
+                <p style="margin: 3px 0; font-size: 14px; color: #555;">📍 {{ place.city_village }}, {{ place.location }}</p>
+                <p style="margin: 3px 0; font-size: 13px; color: #777;">🛣️ {{ place.street_name }}</p>
+                <p style="margin: 3px 0; font-size: 13px; color: #777;">🚩 {{ place.landmark }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p class="no-results">No places found matching your query.</p>
+        {% endif %}
+    </div>
+
+    <!-- Dynamic Modal Popup -->
+    <div id="placeModal" class="modal-overlay" onclick="closeModalOnOverlay(event)" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:1000;">
+        <div class="modal-card" style="background:#fff; width:90%; max-width:650px; padding:25px; border-radius:12px; position:relative; max-height:85vh; overflow-y:auto;">
+            <button onclick="closeModal()" style="position:absolute; top:15px; right:15px; border:none; background:none; font-size:24px; cursor:pointer;">&times;</button>
+
+            <div class="modal-header">
+                <span id="modalCategory" class="tag" style="background:#d4edda; color:#155724; padding:3px 8px; font-size:12px; border-radius:4px;">Category</span>
+                <h2 id="modalName" style="margin-top:8px;">Place Name</h2>
+            </div>
+
+            <div class="modal-body" style="margin-top:15px;">
+                <!-- 4-Box Location Breakdown -->
+                <div style="background:#f8f9fa; padding:15px; border-radius:8px; border:1px solid #e9ecef; margin-bottom:15px; display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
+                    <div>
+                        <span style="font-size:11px; color:#6c757d; font-weight:bold; text-transform:uppercase;">🏙️ City / Village</span>
+                        <p id="modalCity" style="margin:2px 0 0 0; font-size:14px; font-weight:600; color:#212529;"></p>
+                    </div>
+                    <div>
+                        <span style="font-size:11px; color:#6c757d; font-weight:bold; text-transform:uppercase;">🏡 Colony / Area</span>
+                        <p id="modalColony" style="margin:2px 0 0 0; font-size:14px; font-weight:600; color:#212529;"></p>
+                    </div>
+                    <div>
+                        <span style="font-size:11px; color:#6c757d; font-weight:bold; text-transform:uppercase;">🛣️ Street / Road</span>
+                        <p id="modalStreet" style="margin:2px 0 0 0; font-size:14px; font-weight:600; color:#212529;"></p>
+                    </div>
+                    <div>
+                        <span style="font-size:11px; color:#a3704c; font-weight:bold; text-transform:uppercase;">🚩 Landmark</span>
+                        <p id="modalLandmark" style="margin:2px 0 0 0; font-size:14px; font-weight:600; color:#212529;"></p>
+                    </div>
+                </div>
+
+                <h4 style="margin-bottom:5px;">Full Address</h4>
+                <p id="modalAddress" style="font-size:13px; color:#495057; background:#fff3cd; padding:8px 12px; border-radius:5px; margin-bottom:15px;"></p>
+
+                <h4 style="margin-bottom:8px;">Interactive Location Map</h4>
+                <iframe id="modalMap" src="" width="100%" height="240" style="border:0; border-radius:8px; margin-bottom:15px;" loading="lazy"></iframe>
+
+                <h4 style="margin-bottom:8px;">Photo Gallery (5-10 Pictures)</h4>
+                <div id="modalGallery" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; max-height: 250px; overflow-y: auto; padding: 5px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        <h4 style="margin-bottom:8px;">Photo Gallery (5-10 Pictures)</h4>
+<div id="modalGallery" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; max-height: 250px; overflow-y: auto; padding: 5px;"></div>
+    </script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8396edcf1b6b2607d1c699e3b2be85a6 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_8396edcf1b6b2607d1c699e3b2be85a6" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8396edcf1b6b2607d1c699e3b2be85a6 = L.map(
+                "map_8396edcf1b6b2607d1c699e3b2be85a6",
+                {
+                    center: [20.5937, 78.9629],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8a941dda5f8ec3470f8176cebcbd6b22 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_8a941dda5f8ec3470f8176cebcbd6b22.addTo(map_8396edcf1b6b2607d1c699e3b2be85a6);
+        
+    
+            var marker_cluster_f11218aae54702aae13b6ba93c24978b = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_0cf7f9a844947e74ae6d11dff1b413a9 = L.marker(
+                [31.62, 74.8765],
+                {
+}
+            ).addTo(marker_cluster_f11218aae54702aae13b6ba93c24978b);
+        
+    
+            var icon_be3e097b6df921791d0d3c68fab0bf93 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7405871c20e55f73c222e58a3fed3c7a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7454399d834a8e3712dba0f36c9037d2 = $(`<div id="html_7454399d834a8e3712dba0f36c9037d2" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 220px;">             <h4 style="margin: 0 0 5px 0;">Golden Temple</h4>             <span style="background: #eee; padding: 2px 6px; font-size: 11px; border-radius: 4px;">Temple</span>             <hr style="margin: 8px 0;">             <p style="font-size: 12px; margin-bottom: 8px;"><strong>Address:</strong> Golden Temple Rd, Amritsar, Punjab</p>             <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/The_Golden_Temple_of_Amrithsar_7.jpg" style="width: 100%; height: 120px; object-fit: cover; border-radius: 4px;">         </div>         </div>`)[0];
+                popup_7405871c20e55f73c222e58a3fed3c7a.setContent(html_7454399d834a8e3712dba0f36c9037d2);
+            
+        
+
+        marker_0cf7f9a844947e74ae6d11dff1b413a9.bindPopup(popup_7405871c20e55f73c222e58a3fed3c7a)
+        ;
+
+        
+    
+    
+            marker_0cf7f9a844947e74ae6d11dff1b413a9.bindTooltip(
+                `<div>
+                     Golden Temple
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0cf7f9a844947e74ae6d11dff1b413a9.setIcon(icon_be3e097b6df921791d0d3c68fab0bf93);
+            
+    
+            var marker_b389cf71913c013314e91f0d243b8b56 = L.marker(
+                [28.6507, 77.2334],
+                {
+}
+            ).addTo(marker_cluster_f11218aae54702aae13b6ba93c24978b);
+        
+    
+            var icon_630e5825d7c2996584568c4ee657947b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fa823c9caa269438c2365c397c4abd6f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7af9ae12e8dbb6fb4f12db47332cfc07 = $(`<div id="html_7af9ae12e8dbb6fb4f12db47332cfc07" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 220px;">             <h4 style="margin: 0 0 5px 0;">Jama Masjid</h4>             <span style="background: #eee; padding: 2px 6px; font-size: 11px; border-radius: 4px;">Mosque</span>             <hr style="margin: 8px 0;">             <p style="font-size: 12px; margin-bottom: 8px;"><strong>Address:</strong> Chandni Chowk, Old Delhi</p>             <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Jama_Masjid_in_Delhi.jpg" style="width: 100%; height: 120px; object-fit: cover; border-radius: 4px;">         </div>         </div>`)[0];
+                popup_fa823c9caa269438c2365c397c4abd6f.setContent(html_7af9ae12e8dbb6fb4f12db47332cfc07);
+            
+        
+
+        marker_b389cf71913c013314e91f0d243b8b56.bindPopup(popup_fa823c9caa269438c2365c397c4abd6f)
+        ;
+
+        
+    
+    
+            marker_b389cf71913c013314e91f0d243b8b56.bindTooltip(
+                `<div>
+                     Jama Masjid
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b389cf71913c013314e91f0d243b8b56.setIcon(icon_630e5825d7c2996584568c4ee657947b);
+            
+    
+            var marker_99d7ea89a9408ce508622eeab58cc1f7 = L.marker(
+                [15.5009, 73.9116],
+                {
+}
+            ).addTo(marker_cluster_f11218aae54702aae13b6ba93c24978b);
+        
+    
+            var icon_b3ec0d51663a243dbb9ec5f222406a12 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_66feb71190d4d817964e9a2957a36883 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_da3bf8243ab37506b9ed1cfdc0ff6631 = $(`<div id="html_da3bf8243ab37506b9ed1cfdc0ff6631" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 220px;">             <h4 style="margin: 0 0 5px 0;">Basilica of Bom Jesus</h4>             <span style="background: #eee; padding: 2px 6px; font-size: 11px; border-radius: 4px;">Church</span>             <hr style="margin: 8px 0;">             <p style="font-size: 12px; margin-bottom: 8px;"><strong>Address:</strong> Old Goa Road, Bainguinim, Goa</p>             <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Basilica_of_Bom_Jesus_Goa.jpg" style="width: 100%; height: 120px; object-fit: cover; border-radius: 4px;">         </div>         </div>`)[0];
+                popup_66feb71190d4d817964e9a2957a36883.setContent(html_da3bf8243ab37506b9ed1cfdc0ff6631);
+            
+        
+
+        marker_99d7ea89a9408ce508622eeab58cc1f7.bindPopup(popup_66feb71190d4d817964e9a2957a36883)
+        ;
+
+        
+    
+    
+            marker_99d7ea89a9408ce508622eeab58cc1f7.bindTooltip(
+                `<div>
+                     Basilica of Bom Jesus
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_99d7ea89a9408ce508622eeab58cc1f7.setIcon(icon_b3ec0d51663a243dbb9ec5f222406a12);
+            
+    
+            marker_cluster_f11218aae54702aae13b6ba93c24978b.addTo(map_8396edcf1b6b2607d1c699e3b2be85a6);
+        
+</script>
+</html>
